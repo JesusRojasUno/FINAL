@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final</title>
+    <link rel="stylesheet" href="../final.css">
+</head>
+	
+	<div style="background-image: url('https://pbs.twimg.com/media/Eonkyb7UYAA_bEv?format=jpg&name=large');" background-size= 100% 100%>
+	
+<body>Tamales la purisima S.A. de C.V.
+    <h1>Tamales la purisima??????</h1>
+    <div id="uno">
+        <p id="info"></p>
+    </div>
+    <div id="cero">
+<div class="center">
+  <p>Total dentro:<input type="number" name="Total" id="total" value="0" />
+</p>
+          <p> Hombres:
+            <input type="number" name="Hombres" id="hombres" value="0" />
+          </p>
+          <p>Mujeres:
+            <input type="number" name="Mujeres" id="mujeres" value="0" />
+          </p>
+          <div id="tres">
+            <p>Ingresará un/a:</p>
+            <p>
+              <label for="homb" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Hombre</label>
+              <input type="radio" id="homb" name="genero" value="hombre">
+              <label for="muj" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Mujer</label>
+              <input type="radio" id="muj" name="genero" value="mujer">
+            </p>
+            <p>
+              <button type="button" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode text-align: center;" onclick="aumentar()">Entra</button>
+              <button type="button" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode text-align: center;" onclick="disminuir()"> Sale</button>
+            </p>
+            <p><span style="text-align: center"><span class="Left"><img src="https://pbs.twimg.com/media/Eonis0hU0AAVuXY?format=jpg&name=large" alt="local" width="617" id="img1" /></span></span></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp; </p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp; </p>
+            <p>&nbsp;</p>
+            <p><br>
+            </p>
+  </div>
+  <div id="cuatro">
+		 <div class="center">
+		   <p>&nbsp;</p>
+    </div>
+        </div>
+  <span style="text-align: center"></span>
+  <span style="text-align: justify"></span>
+  <span style="text-align: right"></span>
+  <span style="text-align: left"></span>
+  <span style="text-align: center"></span>
+				 
+  <div class="Left"></div>
+</div>
+		         
+    <script>
+        var myJson = ' {"establecimiento":"Tamales la purísima","aforo":40}'
+        var obj = JSON.parse(myJson)
+        document.getElementById("info").innerHTML = `El local es: ${obj.establecimiento} con un máximo de: ${obj.aforo} personas `
+
+        function aumentar() {
+            tot = document.getElementById("total").value
+            tot = parseInt(tot) + 1
+            document.getElementById("total").value = tot
+
+            if (document.getElementById("homb").checked) {
+                h = document.getElementById("hombres").value
+                h = parseInt(h) + 1
+                document.getElementById("hombres").value = h
+                document.getElementById("img1").src = "https://pbs.twimg.com/media/EonkItPUYAIu7pa?format=jpg&name=large";
+            }
+            else if (document.getElementById("muj").checked) {
+                m = document.getElementById("mujeres").value
+                m = parseInt(m) + 1
+                document.getElementById("mujeres").value = m
+                document.getElementById("img1").src = "";
+                document.getElementById("img1").src = "https://pbs.twimg.com/media/EonkhWyUUAAcyvH?format=jpg&name=large";
+            }
+            if (tot>=41) {
+                alert("No cabe ningún alma más:(")
+            }
+        }
+
+        function disminuir() {
+            tot = document.getElementById("total").value
+            tot = parseInt(tot) - 1
+            document.getElementById("total").value = tot
+
+             if (document.getElementById("homb").checked) {
+                h = document.getElementById("hombres").value
+                h = parseInt(h) - 1
+                 document.getElementById("hombres").value = h
+                 document.getElementById("img1").src = "https://static7.depositphotos.com/1021541/681/i/600/depositphotos_6819982-stock-photo-leaving-home.jpg";
+            }
+            else if (document.getElementById("muj").checked) {
+                m = document.getElementById("mujeres").value
+                m = parseInt(m) - 1
+                 document.getElementById("mujeres").value = m
+                  document.getElementById("img1").src = "https://www.lamamaoca.com/wp-content/uploads/2016/10/photo-1467510396478-c4680a636614.jpg";
+            }
+            if (tot>=41) {
+                alert("No cabe ningún alma más:(")
+            }
+        }
+
+    </script>
+</body>
+</html>
